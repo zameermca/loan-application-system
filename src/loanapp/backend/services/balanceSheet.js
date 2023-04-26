@@ -1,16 +1,5 @@
 const mockData = require("../mockData");
 
-function summarizeData(balanceSheet) {
-  // Apply rules and summarize application details
-  const applicationDetails = {
-    businessName: "ABC Company",
-    yearEstablished: "2010",
-    summaryOfProfitOrLoss: "$10,000",
-    preAssessmentValue: "$100,000"
-  };
-  return applicationDetails;
-}
-
 getBalanceSheet = async () => {
   // Fetch balance sheet data from mockData
   const balanceSheet = mockData.map(
@@ -22,12 +11,11 @@ getBalanceSheet = async () => {
     })
   );
 
-  // Return balance sheet
   return balanceSheet;
 };
 
 getDecision = async decision => {
-  // Return balance sheet
+  // Return decision mimicing decision s/w
   if (decision.preAssessment > 20) {
     return { desision: "approved" };
   } else {
@@ -35,4 +23,4 @@ getDecision = async decision => {
   }
 };
 
-module.exports = { summarizeData, getBalanceSheet, getDecision };
+module.exports = { getBalanceSheet, getDecision };
